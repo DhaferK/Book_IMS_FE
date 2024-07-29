@@ -1,6 +1,6 @@
 let currentPage = 1;
-const perPage = 18;
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiZW1haWwiOiJyb2dvQHJvZ28uY29tIiwiZm5hbWUiOiJybyIsImxuYW1lIjoiZ28iLCJyb2xlIjoxLCJwYXNzd29yZCI6IjFmOGMxNzk3ODlkOTQyNTkzMmVmZmFlMzdlYjI2NjM1MDQ1Yjg1NjljYTM5M2Y1MmRhYThkMGFkNzQzZDMwMjEifSwiZXhwIjoxNzIyMTgxMzMyfQ.nTgVMLnU-beVjVjdkop3D38d3qLtHklFzmuXVv7e00k"; // Replace with your actual token
+const perPage = 12;
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiZW1haWwiOiJyb2dvQHJvZ28uY29tIiwiZm5hbWUiOiJybyIsImxuYW1lIjoiZ28iLCJyb2xlIjoxLCJwYXNzd29yZCI6IjFmOGMxNzk3ODlkOTQyNTkzMmVmZmFlMzdlYjI2NjM1MDQ1Yjg1NjljYTM5M2Y1MmRhYThkMGFkNzQzZDMwMjEifSwiZXhwIjoxNzIyMjQ2MzI1fQ.kORdNw269jJ-sh8o20MOjK5zu9qa0pX1WqDIeVJlkzA"; 
 
 async function fetchBooks(page) {
     try {
