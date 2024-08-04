@@ -30,18 +30,19 @@ const Gallery: React.FC<GalleryProps> = ({ token }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [chatOpen, setChatOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');  
+  const [sortBy, setSortBy] = useState<string>('most_trending');  
   const perPage = 12;
 
   useEffect(() => {
     if (token) {
-      loadBooks(currentPage, searchQuery);
+      loadBooks(currentPage, searchQuery, sortBy);
     }
-  }, [currentPage, token, searchQuery]);
+  }, [currentPage, token, searchQuery, sortBy]);
 
-  const fetchBooks = async (page: number, search: string): Promise<Book[]> => {
+  const fetchBooks = async (page: number, search: string, sort_by: string): Promise<Book[]> => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/books?page=${page}&per_page=${perPage}&search=${search}`, {
+      const response = await fetch(`http://localhost:8000/books?page=${page}&per_page=${perPage}&search=${search}&sort_by=${sort_by}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -78,8 +79,8 @@ const Gallery: React.FC<GalleryProps> = ({ token }) => {
     }
   };
 
-  const loadBooks = async (page: number, search: string) => {
-    const books = await fetchBooks(page, search);
+  const loadBooks = async (page: number, search: string, sort_by: string) => {
+    const books = await fetchBooks(page, search, sort_by);
     if (books) {
       setBooks(books);
     }
@@ -101,7 +102,7 @@ const Gallery: React.FC<GalleryProps> = ({ token }) => {
 
   return (
     <div className="gallery-page">
-      <SearchBar setSearchQuery={setSearchQuery} /> 
+      <SearchBar setSearchQuery={setSearchQuery} setSortBy={setSortBy} />  
       {loading ? (
         <div className="loader-wrapper">
           <Hourglass
