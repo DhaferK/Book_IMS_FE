@@ -1,0 +1,120 @@
+.booksSection {
+  padding: 20px;
+  background-color: #172242;
+  border-radius: 12px;
+  color: white;
+}
+
+.booksTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booksTable th, .booksTable td {
+  padding: 12px;
+  border-bottom: 1px solid #445A9A;
+}
+
+.booksTable th {
+  background-color: #1E2A47;
+}
+
+.booksTable td.descriptionCell {
+  max-width: 200px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.editBtn {
+  background: none;
+  border: none;
+  color: #00ADB5;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.editBtn:hover {
+  color: #FFFFFF;
+}
+.editBtn, .saveBtn {
+  background: none;
+  border: none;
+  color: #00ADB5;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.editBtn:hover, .saveBtn:hover {
+  color: #FFFFFF;
+}
+
+.booksTable input {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  background-color: #1E2A47;
+  color: #FFFFFF;
+  border: 1px solid #445A9A;
+  border-radius: 4px;
+}
+
+.booksSection {
+  padding: 20px;
+  background-color: #172242;
+  border-radius: 12px;
+  color: white;
+}
+
+.tableControls {
+  margin-bottom: 10px;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.booksTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booksTable th, .booksTable td {
+  padding: 12px;
+  border-bottom: 1px solid #445A9A;
+}
+
+.booksTable th {
+  background-color: #1E2A47;
+}
+
+.booksTable td.descriptionCell {
+  max-width: 200px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.editBtn, .saveBtn {
+  background: none;
+  border: none;
+  color: #00ADB5;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.editBtn:hover, .saveBtn:hover {
+  color: #FFFFFF;
+}
+
+.booksTable input {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  background-color: #1E2A47;
+  color: #FFFFFF;
+  border: 1px solid #445A9A;
+  border-radius: 4px;
+}

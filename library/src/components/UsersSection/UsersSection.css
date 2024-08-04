@@ -1,0 +1,94 @@
+.usersSection {
+    flex: 1;
+    background-color: #172242;
+    padding: 20px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.userList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.userItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #1E2A47;
+    border-radius: 8px;
+}
+
+.userIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.userRole {
+    margin-left: auto;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.deleteIcon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.addUser {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.addUserInput {
+    padding: 5px;
+    margin-right: 10px;
+    flex: 1;
+    border: 1px solid #445A9A;
+    border-radius: 4px;
+    background-color: #1E2A47;
+    color: #FFFFFF;
+}
+
+.roleSelect {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #1E2A47;
+    color: #FFFFFF;
+    border: 1px solid #445A9A;
+}
+
+.addUserBtn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #00ADB5;
+    color: #FFFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.searchInput {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #445A9A;
+    background-color: #1E2A47;
+    color: #FFFFFF;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+    color: #8A9AB8;
+}

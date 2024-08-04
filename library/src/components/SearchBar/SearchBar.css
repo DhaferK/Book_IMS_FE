@@ -1,0 +1,43 @@
+
+.search-bar {
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  background: #172242;
+  border-radius: 8px;
+  box-sizing: border-box; 
+  padding: 10px; 
+}
+
+.searchIcon,
+.filterIcon,
+.likeIcon {
+  width: 24px; 
+  height: 24px; 
+}
+
+.searchIcon {
+  margin-right: 10px; 
+}
+
+.filterIcon {
+  margin-left: 10px; 
+}
+
+.gap {
+  width: 200px; 
+}
+
+.likeIcon {
+  margin-left: 10px; 
+}
+
+.search-bar input {
+  flex: 1; 
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #445A9A;
+  color: #ffffff; 
+  box-sizing: border-box; 
+}

@@ -1,0 +1,21 @@
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    outline: none;
+    padding: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .like-button img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .like-button:hover {
+    transform: scale(1.1);
+  }
+  

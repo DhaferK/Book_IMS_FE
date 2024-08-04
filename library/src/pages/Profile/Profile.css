@@ -1,0 +1,98 @@
+/* Profile.css */
+.profile-dashboard {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px; /* Add margin to create space from the top */
+    background-color: #172242;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  .profile-sidebar {
+    flex: 0 0 25%; /* Sidebar occupies 25% of the container */
+    background-color: #0d1a33;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .profile-user-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-content {
+    flex: 1; /* Content takes up the remaining space */
+    padding: 20px;
+    background-color: #223456;
+    border-radius: 12px;
+    color: white;
+  }
+  
+  .profile-content h1 {
+    margin-bottom: 20px;
+  }
+  
+  .profile-edit {
+    margin-bottom: 20px;
+  }
+  
+  .profile-edit label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .profile-edit input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #334567;
+    color: white;
+  }
+  
+  .update-button,
+  .reset-password-button,
+  .confirm-reset-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ADB5;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin between buttons */
+  }
+  
+  .update-button:hover,
+  .reset-password-button:hover,
+  .confirm-reset-button:hover {
+    background-color: #008f99;
+  }
+  
+  .reset-password-fields {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reset-password-fields label {
+    margin-bottom: 5px;
+  }
+  
+  .reset-password-fields input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #334567;
+    color: white;
+  }
+  
+  .confirm-reset-button {
+    align-self: flex-start; /* Align the button to the left */
+  }
+  

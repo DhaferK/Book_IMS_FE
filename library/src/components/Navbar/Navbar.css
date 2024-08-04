@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #15171B;
+  border-bottom: 1px solid #bebebe;
+  box-sizing: border-box; 
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  height: 40px; 
+}
+
+.user-icon {
+  height: 30px; 
+  cursor: pointer;
+}

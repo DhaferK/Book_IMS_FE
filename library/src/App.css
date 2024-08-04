@@ -1,0 +1,59 @@
+@import './fonts.css';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: #15171B;
+  color: #FFFFFF;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px; 
+  box-sizing: border-box; 
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #15171B;
+  color: #FFFFFF;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  height: 40px;
+}
+
+.user-icon {
+  height: 30px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}

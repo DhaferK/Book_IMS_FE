@@ -1,0 +1,17 @@
+
+.liked-books-page {
+    padding: 20px;
+  }
+  
+  .liked-books-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .liked-books-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
