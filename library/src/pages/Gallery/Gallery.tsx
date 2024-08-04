@@ -30,7 +30,7 @@ const Gallery: React.FC<GalleryProps> = ({ token }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [chatOpen, setChatOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');  
-  const [sortBy, setSortBy] = useState<string>('most_trending');  
+  const [sortBy, setSortBy] = useState<string>('');  
   const perPage = 12;
 
   useEffect(() => {

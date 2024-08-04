@@ -27,7 +27,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, token, onUnlike }) => {
 
   const handleCardClick = (event: React.MouseEvent) => {
     const target = event.target as HTMLElement;
-    if (!target.closest('.likeButton')) {
+    if (!target.closest('.likeButton') && !target.closest('.likeButtonContainer')) {
       setFlipped(!flipped);
     }
   };
@@ -36,7 +36,9 @@ const BookCard: React.FC<BookCardProps> = ({ book, token, onUnlike }) => {
     <div className={`bookCard ${flipped ? 'flipped' : ''}`} onClick={handleCardClick}>
       <div className="bookCardInner">
         <div className="bookCardFront">
-          <LikeButton token={token} bookId={book.book_id} isLiked={book.isLiked} onUnlike={onUnlike} />
+          <div className="likeButtonContainer">
+            <LikeButton token={token} bookId={book.book_id} isLiked={book.isLiked} onUnlike={onUnlike} />
+          </div>
           <div className="bookHeader">
             <p className="bookTitle headline-small" title={book.title}>{book.title}</p>
             <div className="bookInfo">
