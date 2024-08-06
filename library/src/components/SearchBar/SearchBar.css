@@ -3,10 +3,10 @@
   justify-content: center;
   align-items: center;
   margin: 20px auto;
-  width: 100%; 
-  max-width: 800px; 
+  width: 100%;
+  max-width: 800px;
   position: relative;
-  min-width: 600px; 
+  min-width: 600px;
 }
 
 .search-bar input {
@@ -16,14 +16,18 @@
   border: 1px solid #445A9A;
   background-color: #172242;
   color: white;
-  width: 100%; 
+  width: 100%;
 }
 
-.searchIcon,
+.searchIcon {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
 .filterIcon,
 .likeIcon {
   cursor: pointer;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .filter-container {
@@ -32,7 +36,7 @@
 
 .filter-dropdown {
   position: absolute;
-  top: 40px; 
+  top: 40px;
   right: 0;
   background-color: #172242;
   border-radius: 8px;

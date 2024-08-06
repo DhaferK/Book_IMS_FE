@@ -8,13 +8,12 @@ const apiClient = axios.create({
 });
 
 export const likeBook = async (bookId: string, token: string) => {
-  console.log('Sending payload:', { book_id: bookId });  // Log the payload
   const response = await apiClient.post(
     '/like',
     { book_id: bookId },
     {
       headers: {
-        'Authorization': `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     }
   );
@@ -22,18 +21,14 @@ export const likeBook = async (bookId: string, token: string) => {
   if (response.status !== 200) {
     throw new Error('Failed to like the book');
   }
-  console.log(response.data)
+
   return response.data;
 };
-
-
-
-
 
 export const unlikeBook = async (bookId: string, token: string) => {
   const response = await apiClient.delete(`/unlike/${bookId}`, {
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -55,14 +50,13 @@ export const getUserLikedBooks = async (token: string) => {
     throw new Error('Failed to fetch liked books');
   }
 
-  return response.data; // Ensure this matches the expected format
+  return response.data;
 };
 
-// Get user profile
 export const getUserProfile = async (token: string) => {
   const response = await apiClient.get('/users/me', {
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -73,13 +67,11 @@ export const getUserProfile = async (token: string) => {
   return response.data;
 };
 
-// Login user
 export const loginUser = async (username: string, password: string) => {
   const response = await apiClient.post('/users/login', { username, password });
   return response.data;
 };
 
-// Register user
 export const registerUser = async (user: { fname: string; lname: string; email: string; password: string }) => {
   const response = await apiClient.post('/users/register', {
     fname: user.fname,
@@ -91,11 +83,10 @@ export const registerUser = async (user: { fname: string; lname: string; email: 
   return response.data;
 };
 
-// Update user profile (first name, last name)
 export const updateUserProfile = async (token: string, userData: { fname: string; lname: string }) => {
   const response = await apiClient.put('/users/me', userData, {
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -106,14 +97,13 @@ export const updateUserProfile = async (token: string, userData: { fname: string
   return response.data;
 };
 
-// Reset user password
 export const resetUserPassword = async (token: string, currentPassword: string, newPassword: string) => {
   const response = await apiClient.put(
     '/users/me/password',
     { currentPassword, newPassword },
     {
       headers: {
-        'Authorization': `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     }
   );
@@ -128,7 +118,7 @@ export const resetUserPassword = async (token: string, currentPassword: string, 
 export const getAllUsers = async (token: string) => {
   const response = await apiClient.get('/users', {
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -136,13 +126,13 @@ export const getAllUsers = async (token: string) => {
     throw new Error('Failed to fetch users');
   }
 
-  return response.data.users; 
+  return response.data.users;
 };
 
 export const deleteUser = async (email: string, token: string) => {
   const response = await apiClient.delete(`/users/${email}`, {
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -153,3 +143,57 @@ export const deleteUser = async (email: string, token: string) => {
   return response.data;
 };
 
+export const addBook = async (book: {
+  title: string;
+  author_name: string;
+  genre: string;
+  description: string;
+  year: number;
+  rating: number;
+  thumbnail: string;
+}, token: string) => {
+  const response = await apiClient.post('/books', book, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (response.status !== 200) {
+    throw new Error('Failed to add the book');
+  }
+
+  return response.data;
+};
+
+export const fetchBooks = async (token: string, page: number, perPage: number, searchQuery: string) => {
+  const response = await apiClient.get('/books', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    params: {
+      page,
+      per_page: perPage,
+      search: searchQuery,
+    },
+  });
+
+  if (response.status !== 200) {
+    throw new Error('Failed to fetch books');
+  }
+
+  return response.data.books;
+};
+
+export const deleteBook = async (bookId: string, token: string) => {
+  const response = await apiClient.delete(`/books/${bookId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (response.status !== 200) {
+    throw new Error('Failed to delete book');
+  }
+
+  return response.data;
+};

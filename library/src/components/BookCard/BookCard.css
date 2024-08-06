@@ -138,8 +138,20 @@
 }
 
 .bookRating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   margin: 0;
+  width: 50px; 
+  text-align: right; 
 }
+
+.bookRating img {
+  margin-left: 5px;
+  width: 14px;
+  height: 14px;
+}
+
 
 .likeButton {
   position: absolute;

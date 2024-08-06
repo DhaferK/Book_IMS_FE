@@ -1,0 +1,41 @@
+/* AddBookSection.css */
+.addBookSection {
+    background-color: #172242;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    margin-top: 20px;
+    width: 80%;
+  }
+  
+  .addBookSection h2 {
+    margin-bottom: 20px;
+  }
+  
+  .addBookForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .addBookForm input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #445A9A;
+    background-color: #1E2A47;
+    color: white;
+  }
+  
+  .addBookForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ADB5;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .addBookForm button:hover {
+    background-color: #00C8D1;
+  }
+  

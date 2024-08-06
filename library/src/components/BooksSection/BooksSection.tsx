@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './BooksSection.css';
-import addIcon from '../../assets/addIcon.svg';
 import deleteIcon from '../../assets/deleteIcon.svg';
+import { fetchBooks, deleteBook } from '../../services/api'; 
 
 interface Book {
   book_id: string;
@@ -19,32 +19,20 @@ const BooksSection: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [editingRow, setEditingRow] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');  
   const token = localStorage.getItem('token');
 
   useEffect(() => {
     if (token) {
-      fetchBooks();
+      loadBooks();
     }
-  }, [token]);
+  }, [token, searchQuery]);  
 
-  const fetchBooks = async () => {
+  const loadBooks = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/books?page=1&per_page=10`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.detail || 'Failed to fetch books');
-      }
-
-      setBooks(data.books);
+      const books = await fetchBooks(token!, 1, 10, searchQuery);
+      setBooks(books);
     } catch (error) {
       console.error('Error fetching books:', error);
       alert('Error fetching books. Please try again later.');
@@ -71,36 +59,35 @@ const BooksSection: React.FC = () => {
     setEditingRow(null);
   };
 
-  const handleDeleteBook = (book_id: string) => {
+  const handleDeleteBook = async (book_id: string) => {
     const confirmDelete = window.confirm(`Are you sure you want to delete the book with ID: ${book_id}?`);
     if (confirmDelete) {
-      setBooks(books.filter(book => book.book_id !== book_id));
+      try {
+        await deleteBook(book_id, token!);
+        setBooks(books.filter(book => book.book_id !== book_id));
+        alert('Book deleted successfully');
+      } catch (error) {
+        console.error('Error deleting book:', error);
+        alert('Error deleting book. Please try again later.');
+      }
     }
   };
 
-  const handleAddBook = () => {
-    const newBook: Book = {
-      book_id: (books.length + 1).toString(),
-      title: '',
-      author_name: '',
-      genre: '',
-      description: '',
-      year: new Date().getFullYear(),
-      rating: 0,
-      num_pages: 0,
-      ratings_count: 0,
-    };
-    setBooks([...books, newBook]);
-    setEditingRow(newBook.book_id);
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
     <div className="booksSection">
       <h2>Books</h2>
       <div className="tableControls">
-        <button onClick={handleAddBook} className="iconButton">
-          <img src={addIcon} alt="Add Book" />
-        </button>
+        <input
+          type="text"
+          placeholder="Search by title, author, genre, or ID"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="searchInput"
+        />
       </div>
       {loading ? (
         <p>Loading books...</p>
